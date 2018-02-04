@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS改变插入光标颜色caret-color简介及其它变色方法</title>
+    <!--如果浏览器支持caret-color属性，优先使用caret-color（Chrome/Firefox/Opera）；其次使用::first-line方法（Safari）；最后忽略（如IE）。-->
+    <style>
+        input {
+            color: #333;
+            caret-color: red;
+        }
+        @supports (-webkit-mask: none) and (not (cater-color: red)) {
+            input { color: red; }
+            input::first-line { color: #333; }
+        }
+    </style>
+</head>
+<body>
+<input placeholder="请输入名字">
+</body>
+</html>
