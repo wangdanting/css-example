@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS, SVG和canvas分别实现文本文字纹理叠加效果</title>
+    <style>
+        .pattern-overlay {
+            font-size: 60px;
+            font-family: 'microsoft yahei';
+            background-image: url("../image/pattern01.jpg");
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+        .pattern-overlay > span {
+            position: absolute;
+            background-image: linear-gradient(to bottom, #f00, #f00);
+            mix-blend-mode: overlay;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+        .pattern-overlay > span::before {
+            content: attr(data-text);
+        }
+    </style>
+</head>
+<body>
+<h2 class="pattern-overlay">
+    <span data-text="CSS纹理叠加"></span>
+    CSS纹理叠加
+</h2>
+</body>
+</html>
