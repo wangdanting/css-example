@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS :focus-within伪类选择器及纯CSS下拉等应用举例</title>
+    <style>
+        .textarea-x {
+            position: relative;
+            max-width: 298px;
+            overflow: hidden;
+            padding-bottom: 24px;
+            border: 1px solid #d0d0d5;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: border-color .2s;
+        }
+
+        .textarea-count {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 12px;
+            line-height: 16px;
+            color: #999;
+        }
+
+        .textarea-x > textarea {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 7px 9px;
+            border: 0;
+            background: none;
+            outline: 0;
+            resize: none;
+        }
+
+        .textarea-x:focus-within {
+            border-color: #00a5e0;
+        }
+    </style>
+    <style>
+        .bar {
+            padding-left: 40px;
+            background-color: #e3e4e5;
+            color: #888;
+        }
+
+        .summary {
+            position: relative;
+            display: inline-block;
+            padding: 5px 28px;
+            text-indent: -15px;
+            outline: 0;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .summary::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            margin: 4px 0 0 .5px;
+            background: url("../image/arrow-on.svg") no-repeat;
+            background-size: 100% 100%;
+            transition: transform .2s;
+        }
+
+        .details:focus-within .summary,
+        .summary:hover {
+            background-color: #fff;
+            box-shadow: inset 1px 0 #ddd, inset -1px 0 #ddd;
+        }
+
+        .details:focus-within .summary::after {
+            transform: rotate(180deg);
+        }
+
+        .box {
+            display: none;
+            position: absolute;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        .details:focus-within .box {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<!--带计数文本域的focus高亮-->
+
+<div class="textarea-x">
+    <textarea id="forFocus" maxlength="250" rows="5"></textarea>
+    <label for="forFocus" class="textarea-count">0/250</label>
+</div>
+
+<!--:focus-within伪类与纯CSS下拉列表实例页面-->
+<div class="bar">
+    <div class="details">
+        <a href="javascript:;" class="summary">我的消息</a>
+        <div class="box">
+            <a href="javascript:">我的回答<sup>12</sup></a>
+            <a href="javascript:">我的私信</a>
+            <a href="javascript:">未评价订单<sup>2</sup></a>
+            <a href="javascript:">我的关注</a>
+        </div>
+    </div>
+</div>
+<p>这里放一段文字表明上面的是悬浮效果。</p>
+</body>
+</html>
