@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 radial-gradient径向渐变语法及辅助理解案例10则</title>
+    <style>
+        .demo1 {
+            width: 400px;
+            height: 200px;
+            background: radial-gradient(yellow, red);
+        }
+
+        .demo2 {
+            width: 400px;
+            height: 200px;
+            background: radial-gradient(circle, yellow, red);
+        }
+
+        .demo3 {
+            width: 400px;
+            height: 200px;
+            background: radial-gradient(circle at 50px 50px, yellow, red);
+        }
+
+        .demo4 {
+            width: 400px;
+            height: 200px;
+            background: radial-gradient(closest-side circle at 50px 50px, yellow, red);
+        }
+
+        .demo5 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid silver;
+            background: radial-gradient(closest-side circle, yellow, orange, red, white);
+        }
+
+        .demo6 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(50px 100px ellipse, transparent 40px, yellow 41px, red);
+        }
+
+        .demo7 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(50px 100px ellipse, transparent 40px, yellow 41px, red 49px, transparent 50px),
+                        radial-gradient(30px circle, red, red 29px, transparent 30px);
+        }
+
+        .demo8 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(5px 10px ellipse, transparent 4px, yellow 5px, red 6px, transparent 7px),
+                        radial-gradient(3px circle, red, red 3px, transparent 4px);
+            background-size: 25px;
+        }
+
+        .demo9 {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background: white;
+        }
+
+        .demo9::after {
+            content: '';
+            position: absolute;
+            height: 10px;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            background: radial-gradient(20px 15px ellipse at top, red 10px, transparent 11px);
+            background-size: 20px 10px;
+        }
+
+        .demo10 {
+            width: 100px; height: 100px;
+            border: 50px solid;
+            border-image: radial-gradient(circle, transparent 50px, yellow 51px, red) 50 stretch;
+        }
+    </style>
+</head>
+<body>
+
+<h2>最基础最简单使用</h2>
+<div class="demo1"></div>
+
+<h2>简单的圆形渐变</h2>
+<div class="demo2"></div>
+
+<h2>指定渐变起始点位置</h2>
+<div class="demo3"></div>
+
+<h2>指定渐变终止点位置</h2>
+<div class="demo4"></div>
+
+<h2>指定渐变颜色断点</h2>
+<div class="demo5"></div>
+
+<h2>椭圆类型的径向渐变</h2>
+<div class="demo6"></div>
+
+<h2>可累加的径向渐变背景图</h2>
+<div class="demo7"></div>
+
+<h2>渐变背景的尺寸控制</h2>
+<div class="demo8"></div>
+
+<h2>水波效果</h2>
+<div class="demo9"></div>
+
+<h2>作为border-image的径向渐变</h2>
+<div class="demo10"></div>
+</body>
+</html>
