@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css实现高度height随宽度width变化保持比例不变</title>
+	<style>
+		.banner {
+			width: 100%;
+			background: red;
+		}
+
+		.banner:before {
+			content: '';
+			display: inline-block;
+			padding-bottom: 50%; //以父元素的width为基准
+		}
+	</style>
+</head>
+<body>
+	<div class="banner"></div>
+</body>
+</html>
