@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>width的fit-content</title>
+    <style>
+        .parent {
+            display: inline-block;
+            background: #f0f3f9;
+
+            margin: auto; //没用
+        }
+
+        .parent1 {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+
+            background: #f0f3f9;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <img src="../image/share-banner-1.png">
+    <p>kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig</p>
+</div>
+
+<div class="parent1">
+    <img src="../image/share-banner-1.png">
+    <p>kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig</p>
+</div>
+</body>
+</html>
