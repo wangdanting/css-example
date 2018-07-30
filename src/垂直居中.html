@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中方法</title>
+    <style>
+        .parent {
+            width: 300px;
+            height: 200px;
+            line-height: 200px;
+            background: #f0f3f9;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .child {
+            background: red;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+<strong>父元素高已知，子元素高未知</strong>
+<div class="parent">
+    <div class="child">
+        sdfsdfsfsfsdfsdfsdsdfsdfsfsfsdfsdfsdffdfsddfffsdfsdfsfs
+        fsdfsdfsdffdfsddfffsdfsdfsfsfsdfsdfsdffdfsddfffsdfsdfsfsf
+        sdfsdfsdffdfsddfffsdfsdfsfsfsdfsdfsdffdfsddfffsdfsdfsfsfsdfsd
+    </div>
+</div>
+</body>
+</html>
