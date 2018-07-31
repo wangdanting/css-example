@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clip-path</title>
+    <style>
+        .demo {
+            padding: 20px;
+            width: 310px;
+            height: 240px;
+            background: url('../image/share-banner-1.png') center/cover no-repeat;
+        }
+
+        .demo1 {
+            clip-path: circle(45%);
+        }
+
+        .demo2 {
+            clip-path: circle(50px at 0 100px);
+        }
+
+        .demo3 {
+            clip-path: inset(100px 50px);
+        }
+
+        .demo4 {
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+        }
+
+        .demo5 {
+            clip-path: ellipse(130px 140px at 10% 20%);
+        }
+    </style>
+</head>
+<body>
+<strong>clip-path:circle(45%)</strong>
+<div class="demo demo1"></div>
+
+<strong>clip-path:circle(50px at 0 100px)</strong>
+<div class="demo demo2"></div>
+
+<strong>clip-path:inset(100px 50px)</strong>
+<div class="demo demo3"></div>
+
+<strong>clip-path:polygon(50% 0, 100% 50%, 50% 100%, 0 50%)</strong>
+<div class="demo demo4"></div>
+
+<strong>clip-path:ellipse(130px 140px at 10% 20%)不懂</strong>
+<div class="demo demo5"></div>
+</body>
+</html>
