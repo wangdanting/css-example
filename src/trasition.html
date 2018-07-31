@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition测试</title>
+    <style>
+        .box {
+            width: 350px;
+            height: 280px;
+        }
+
+        .box-img {
+            position: absolute;
+            transition: all 1s ease-in-out;
+        }
+
+        .after {
+            transform: scale(0);
+            filter: Alpha(opacity=0);
+            opacity: 0;
+        }
+
+        .box:hover .after{
+            opacity: 1;
+            filter: Alpha(opacity=100);
+            transform: scale(1);
+            transform-origin: right top;
+        }
+
+        .box:hover .before:hover{
+            transform: scale(0);
+            transform-origin: left bottom;
+        }
+
+    </style>
+
+    <style>
+        .box1 {
+            width: 350px;
+            height: 280px;
+        }
+
+        .box-img1 {
+            position: absolute;
+            transition: all 1s ease-in-out;
+        }
+
+        .after1 {
+            transform: scale(1, 0);
+            opacity: 0;
+        }
+
+        .box1:hover .after1{
+            opacity: 1;
+            filter: Alpha(opacity=100);
+            transform: scale(1, 1);
+        }
+
+        .box1:hover .before1:hover{
+            transform: scale(0) rotate(720deg);
+        }
+    </style>
+
+    <style>
+        .trans-box {
+            width: 350px;
+            overflow: hidden;
+        }
+
+        .trans-img-box  {
+            width: 1750px;
+            height: 280px;
+            transition: all 1s ease-in-out;
+        }
+
+        .trans-img {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img class="box-img after" src="../image/share-banner-1.png">
+    <img class="box-img before" src="../image/share-banner-2.png">
+</div>
+
+<div class="box1">
+    <img class="box-img1 after1" src="../image/share-banner-1.png">
+    <img class="box-img1 before1" src="../image/share-banner-2.png">
+</div>
+
+<div class="trans-box">
+    <div id="transImgBox" class="trans-img-box">
+        <img class="trans-img" src="../image/share-banner-1.png">
+        <img class="trans-img" src="../image/share-banner-2.png">
+        <img class="trans-img" src="../image/share-banner-1.png">
+        <img class="trans-img" src="../image/share-banner-2.png">
+    </div>
+    <div id="transTrigger" class="trans-trigger">
+        <a href="#1">图片1</a>
+        <a href="#2">图片2</a>
+        <a href="#3">图片3</a>
+        <a href="#4">图片4</a>
+    </div>
+</div>
+
+<script>
+    (function() {
+        let $ = (id) => {
+            return document.getElementById(id);
+        };
+
+        let oBox = $('transImgBox'),
+            oTrigger = $('transTrigger').getElementsByTagName('a'),
+            lTrigger = oTrigger.length;
+
+        if(oBox && lTrigger) {
+            for(let i = 0; i < lTrigger; i++) {
+                oTrigger[i].onclick = () => {
+                    oBox.style.marginLeft = `-${(i * 350)}px`;
+                    return false;
+                }
+            }
+        }
+
+    })();
+</script>
+</body>
+</html>
