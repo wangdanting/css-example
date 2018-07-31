@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition-timing-function</title>
+    <style>
+        .transBox {
+            padding: 20px;
+            background: #f0f3f9;
+
+        }
+
+        .trans-list {
+            position: relative;
+            margin: 20px 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: #89a9e9;
+            border-radius: 5px;
+            font-size: 10px;
+            text-align: center;
+            transform: rotate(0);
+        }
+
+        .ease {
+            transition: all 4s ease;
+        }
+
+        .ease-in {
+            transition: all 4s ease-in;
+        }
+
+        .ease-out {
+            transition: all 4s ease-out;
+        }
+
+        .ease-in-out {
+            transition: all 4s ease-in-out;
+        }
+
+        .linear {
+            transition: all 4s linear;
+        }
+
+        .transBox:hover .trans-list{
+            left: 90%;
+            transform: rotate(360deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="transBox">
+    <div class="trans-list ease">ease</div>
+    <div class="trans-list ease-in">ease-in</div>
+    <div class="trans-list ease-out">ease-out</div>
+    <div class="trans-list ease-in-out">ease-in-out</div>
+    <div class="trans-list linear">linear</div>
+</div>
+</body>
+</html>
