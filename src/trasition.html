@@ -77,6 +77,63 @@
             float: left;
         }
     </style>
+
+    <style>
+        .acco-box {
+            width: 400px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .acco-title {
+            position: relative;
+            padding-left: 25px;
+            line-height: 26px;
+            font-size: 14px;
+            background: #cadbeb;
+            border-bottom: 1px solid #beceeb;
+            cursor: pointer;
+        }
+
+        .acco-title:before {
+            content: '';
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #333;
+            border-right: 10px solid transparent;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        .acco-title-active {
+            background: #beceeb;
+        }
+
+        .acco-content {
+            box-sizing: border-box;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .acco-content img {
+            float: left;
+            padding: 0 10px 10px 0;
+            width: 100px;
+        }
+
+        .acco-content p {
+            margin: 0;
+        }
+
+        .acco-content-active {
+            height: 140px;
+        }
+
+    </style>
 </head>
 <body>
 <div class="box">
@@ -104,6 +161,25 @@
     </div>
 </div>
 
+<div class="acco-box">
+    <div class="acco-title acco-title-active" id="accoTitle1">一个普通的文本的段落</div>
+    <div class="acco-content acco-content-active" data-for="accoTitle1">
+        <p>kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig</p>
+    </div>
+    <div class="acco-title" id="accoTitle2">一个有个小图的段落</div>
+    <div class="acco-content" data-for="accoTitle2">
+        <p>
+            <img src="../image/share-banner-1.png">
+            kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig
+        </p>
+    </div>
+    <div class="acco-title" id="accoTitle3">纯粹的两段文字</div>
+    <div class="acco-content" data-for="accoTitle3">
+        <p>kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig</p>
+        <p>kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig kevin is a pig</p>
+    </div>
+</div>
+
 <script>
     (function() {
         let $ = (id) => {
@@ -123,6 +199,43 @@
             }
         }
 
+    })();
+
+    (function() {
+        // 使用'简单的类/ID选择器'获取元素
+        let $$ = (selector) => {
+            let cl, id, alls, arrEle = [];
+            if(/^\./.test(selector)) {
+                cl = selector.replace('.', '');
+                alls = document.getElementsByTagName('*');
+                for(let i = 0, len = alls.length; i < len; i++) {
+                    let name = alls[i].className,
+                        arrName = [];
+                    if(name) {
+                        arrName = name.split('');
+                        for(let j = 0, len = arrName.length; i < len; i++) {
+                            if(arrName[j] === cl) {
+                                arrEle.push(alls[i]);
+                            }
+                        }
+                    }
+                }
+            } else if(/^#/.test(selector)) {
+                id = selector.replace('#', '');
+                let o = document.getElementById(id);
+                if(o) {
+                    arrEle.push(o);
+                }
+            }
+
+            return arrEle;
+        };
+
+
+        //执行点击
+        $$('.acco-title').click(() => {
+
+        })
     })();
 </script>
 </body>

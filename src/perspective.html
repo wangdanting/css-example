@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>perspective</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            margin: 75px 0 0 75px;
+            box-sizing: border-box;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            backface-visibility: visible;
+            transform-style: preserve-3d;
+            perspective-origin: 150% 150%;
+        }
+
+        .pers500 {
+            perspective: 500px;
+        }
+
+        .face {
+            display: block;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 60px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .front {
+            background: rgba(0, 0, 0, 0.3);
+            transform: translateZ(50px);
+        }
+
+        .back {
+            background: rgba(0, 255, 0, 1);
+            transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .right {
+            background: rgba(196, 0, 0, 0.7);
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .left {
+            background: rgba(0, 0, 196, 0.7);
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .top {
+            background: rgba(196, 196, 0, 0.7);
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .bottom {
+            background: rgba(196, 0, 196, 0.7);
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+    </style>
+
+    <style>
+        .demo {
+            width: 800px;
+            height: 300px;
+            margin: auto;
+            border: 1px solid #e5e5e5;
+        }
+
+        .container1 {
+            position: relative;
+            top: 50px;
+            width: 150px;
+            height: 210px;
+            perspective: 800px;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+        }
+
+        .page {
+            position: absolute;
+            box-sizing: border-box;
+            margin: 15px;
+            width: 120px;
+            height: 180px;
+        }
+
+        .page1 {
+            transform: rotateY(0) translateZ(206px);
+        }
+        .page2 {
+            transform: rotateY(40deg) translateZ(206px);
+        }
+        .page3 {
+            transform: rotateY(80deg) translateZ(206px);
+        }
+        .page4 {
+            transform: rotateY(120deg) translateZ(206px);
+        }
+        .page5 {
+            transform: rotateY(160deg) translateZ(206px);
+        }
+        .page6 {
+            transform: rotateY(200deg) translateZ(206px);
+        }
+        .page7 {
+            transform: rotateY(240deg) translateZ(206px);
+        }
+        .page8 {
+            transform: rotateY(280deg) translateZ(206px);
+        }
+        .page9 {
+            transform: rotateY(320deg) translateZ(206px);
+        }
+    </style>
+
+    <style>
+        .container2 {
+            width: 128px;
+            height: 100px;
+            margin-left: -64px;
+            -webkit-transition: -webkit-transform 1s;
+            -moz-transition: -moz-transform 1s;
+            transition: transform 1s;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            position: absolute;
+            left: 50%;
+        }
+
+        .piece {
+            width: 128px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.5);
+            -webkit-transition: opacity 1s, -webkit-transform 1s;
+            -moz-transition: opacity 1s, -moz-transform 1s;
+            transition: opacity 1s, transform 1s;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="cube pers500">
+        <div class="face front">1</div>
+        <div class="face back">2</div>
+        <div class="face right">3</div>
+        <div class="face left">4</div>
+        <div class="face top">5</div>
+        <div class="face bottom">6</div>
+    </div>
+</div>
+
+<div class="demo">
+    <div class="container1" id="container1">
+        <img class="page page1" src="../image/1.jpg">
+        <img class="page page2" src="../image/2.jpg">
+        <img class="page page3" src="../image/3.jpeg">
+        <img class="page page4" src="../image/4.jpg">
+        <img class="page page5" src="../image/5.jpg">
+        <img class="page page6" src="../image/6.jpg">
+        <img class="page page7" src="../image/7.jpg">
+        <img class="page page8" src="../image/8.jpg">
+        <img class="page page9" src="../image/9.jpg">
+    </div>
+</div>
+
+<div class="container2">
+    <img id="piece1" class="piece" src="../image/mm1.jpg"/>
+    <img id="piece2" class="piece" src="../image/mm1.jpg"/>
+    <img id="piece3" class="piece" src="../image/mm1.jpg"/>
+    <img id="piece4" class="piece" src="../image/mm1.jpg"/>
+    <img id="piece5" class="piece" src="../image/mm1.jpg"/>
+    <img id="piece6" class="piece" src="../image/mm1.jpg"/>
+    <img id="piece7" class="piece" src="../image/mm1.jpg"/>
+    <img id="piece8" class="piece" src="../image/mm1.jpg"/>
+    <img id="piece9" class="piece" src="../image/mm1.jpg"/>
+</div>
+
+<script>
+    (function() {
+        if (typeof window.screenX === "number") {
+            // CSS transform变换应用
+            var transform = function(element, value, key) {
+                    key = key || "Transform";
+                    ["Moz", "O", "Ms", "Webkit", ""].forEach(function(prefix) {
+                        element.style[prefix + key] = value;
+                    });
+
+                    return element;
+                }
+                // 浏览器选择器API
+                , $ = function(selector) {
+                    return document.querySelector(selector);
+                }, $$ = function(selector) {
+                    return document.querySelectorAll(selector);
+                };
+            // 元素
+            var eleContainer = $("#container2"), indexPiece = 0;
+            // 元素
+            var elePics = $$(".piece"), rotate = 360 / elePics.length, transZ = 64 / Math.tan((rotate / 2 / 180) * Math.PI);
+
+            // eleContainer.addEventListener("click", function() {
+            //     transform(this, "rotateY("+ (-1 * rotate * ++indexPiece) +"deg)");
+            // });
+
+            let a = document.getElementsByClassName('piece');
+            console.log(a, 'a');
+
+            a.forEach(function(i, j) {
+                // console.log(i, j);
+                transform($("#piece" + i), "rotateY("+ j * rotate +"deg) translateZ("+ (transZ + 20) +"px)");
+            });
+
+            // elePics.forEach(function(i, j) {
+            //     transform($("#piece" + i), "rotateY("+ j * rotate +"deg) translateZ("+ (transZ + 20) +"px)");
+            // });
+        } else {
+            alert("你好，养猪场不是飞机场，是开不了战斗机的！");
+        }
+    })();
+</script>
+
+</body>
+</html>
