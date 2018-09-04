@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多重边框实现（box-shadow）</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            background-clip: content-box;
+            box-shadow: 0 0 0 10px #655;
+            color: #fff;
+            border: 10px solid red;
+        }
+
+        .container1 {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            box-shadow: 0 0 0 10px deeppink;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .container3 {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            box-shadow: inset 0 0 0 10px deeppink;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    box-shadow的行为跟边框不完全一致，它不会影响布局，而且也不会受到box-sizing属性的影响。
+</div>
+<div class="container1">
+    会影响鼠标事件，解决方案，用box-shadow的inset
+</div>
+<div class="container3">
+    会影响鼠标事件，解决方案，用box-shadow的inset
+</div>
+</body>
+</html>
