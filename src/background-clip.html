@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-clip</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            height: 280px;
+            background: url('../image/share-banner-1.png') top left / cover;
+        }
+
+        .content {
+            padding: 10px;
+            width: 300px;
+            height: 200px;
+            border: 10px solid hsla(0, 0%, 100%, .5);
+            background: #fff;
+            background-clip: border-box;
+        }
+
+        .test1 {
+            background-clip: content-box;
+        }
+
+        .test2 {
+            background-clip: padding-box;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        background-clip: border-box
+    </div>
+</div>
+<div class="container">
+    <div class="content test1">
+        background-clip: content-box
+    </div>
+</div>
+<div class="container">
+    <div class="content test2">
+        background-clip: padding-box
+    </div>
+</div>
+</body>
+</html>
