@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多重边框(outline)</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            background-clip: content-box;
+            outline: 10px solid #655;
+            color: #fff;
+            border: 10px solid red;
+        }
+
+        .container1 {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            outline: 10px solid #655;
+            color: #fff;
+            cursor: pointer;
+            border: 10px solid red;
+        }
+
+        .container3 {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            outline: 10px solid #655;
+            outline-offset: -10px;
+            color: #fff;
+            cursor: pointer;
+            border: 10px solid red;
+        }
+
+        .container4 {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            outline: 10px dashed #655;
+            color: #fff;
+            cursor: pointer;
+            border: 10px solid red;
+        }
+
+        .container5 {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            outline: 10px dashed #655;
+            color: #fff;
+            cursor: pointer;
+            border: 10px solid red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    outline的行为跟边框不完全一致，它不会影响布局，而且也不会受到box-sizing属性的影响。
+</div>
+<div class="container1">
+    会影响鼠标事件，解决方案，用outline-offset的负值
+</div>
+<div class="container3">
+    会影响鼠标事件，解决方案，用outline-offset的负值
+</div>
+<div class="container4">
+    可以虚线
+</div>
+<div class="container5">
+    border-radius 不能
+</div>
+</body>
+</html>
