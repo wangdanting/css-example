@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>背景定位</title>
+    <style>
+        .container {
+            margin-bottom: 10px;
+            width: 400px;
+            height: 400px;
+            background: url('../image/kevin.jpg') right bottom no-repeat #58a;
+            background-position: right 20px bottom 10px;
+        }
+
+        .container1 {
+            margin-bottom: 10px;
+            padding: 20px 10px;
+            width: 400px;
+            height: 400px;
+            background: url('../image/kevin.jpg') right bottom no-repeat #58a;
+            background-origin: content-box;
+            box-sizing: border-box;
+        }
+
+        .container2 {
+            width: 400px;
+            height: 400px;
+            background: url('../image/kevin.jpg') no-repeat #58a;
+            background-position: calc(100% - 20px) calc(100% - 10px);
+        }
+    </style>
 </head>
 <body>
-
+<div class="container">background-position方法</div>
+<div class="container1">background-origin方法</div>
+<div class="container2">calc()方法</div>
 </body>
 </html>
