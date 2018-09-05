@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条纹背景</title>
+    <style>
+        .container {
+            display: inline-block;
+            margin: 10px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .container1 {
+            background: linear-gradient(#fb3, #58a);
+        }
+
+        .container2 {
+            background: linear-gradient(#fb3 20%, #58a 80%);
+        }
+
+        .container3 {
+            background: linear-gradient(#fb3 40%, #58a 60%);
+        }
+
+        .container4 {
+            background: linear-gradient(#fb3 50%, #58a 50%);
+        }
+
+        .container5 {
+            background: linear-gradient(#fb3 50%, #58a 50%) top left/ 100% 30px;
+        }
+
+        .container6 {
+            background: linear-gradient(#fb3 30%, #58a 0) top left/ 100% 30px;
+        }
+
+        .container7 {
+            background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0) top left/ 100% 45px;
+        }
+
+        .container8 {
+            background: linear-gradient(to right, #fb3 50%, #58a 0) top left/ 30px 100%;
+        }
+
+        .container9 {
+            background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0) top left/ 30px 30px;
+        }
+
+        .container10 {
+            background: linear-gradient(45deg, #fb3 33.3%, #58a 0, #58a 66.6%, #fb3 0) top left/ 30px 30px;
+        }
+
+        .container11 {
+            background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0) top left/ 42.42px 42.42px; /* 2*15√2 */
+        }
+
+        .container12 {
+            background: repeating-linear-gradient(45deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+        }
+
+        .container13 {
+            background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+        }
+
+        .container14 {
+            background: #58a;
+            background-image: repeating-linear-gradient(30deg, transparent, transparent 15px, hsla(0, 0%, 100%, .1) 0, hsla(0, 0%, 100%, .1) 30px);
+        }
+    </style>
+</head>
+<body>
+<div class="container container1"></div>
+<div class="container container2"></div>
+<div class="container container3"></div>
+<div class="container container4"></div>
+<div class="container container5"></div>
+<div class="container container6"></div>
+<div class="container container7"></div>
+<div class="container container8"></div>
+<div class="container container9"></div>
+<div class="container container10"></div>
+<div class="container container11"></div>
+<div class="container container12"></div>
+<div class="container container13"></div>
+<div class="container container14"></div>
+</body>
+</html>
