@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机性 蝉原则</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 200px;
+            background: hsl(20, 40%, 90%);
+            background-image: linear-gradient(90deg, #fb3 11px, transparent 0),
+                              linear-gradient(90deg, #ab4 23px, transparent 0),
+                              linear-gradient(90deg, #655 41px, transparent 0);
+            background-size: 41px 100%, 61px 100%, 83px 100%; /* 41 * 61 * 83 = 207583  每隔重复像素 */
+        }
+    </style>
+</head>
+<body>
+<!-- 让最小公倍数最大化，这些数字最好是 相对质数 -->
+<div class="container"></div>
+</body>
+</html>
