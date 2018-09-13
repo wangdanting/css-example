@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>连续的图像边框</title>
+    <style>
+        .container1 {
+            width: 200px;
+            height: 160px;
+            background: #fff;
+            border: 20px solid transparent;
+            border-image: url(../image/share-banner-2.png) 30;
+        }
+
+        .container2 {
+            width: 200px;
+            height: 300px;
+        }
+
+        .container3 {
+            width: 200px;
+            height: 300px;
+            border: 20px solid transparent;
+            /* background-image: linear-gradient(white, white), url(../image/share-banner-2.png); */
+            /* background-clip: padding-box, border-box;
+            background-origin: border-box; */
+            background: linear-gradient(white, white) padding-box,
+                        url(../image/share-banner-2.png) border-box 0 / cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">border-image</div>
+    <div class="container1 container2">border-image</div>
+    <div class="container3">background-clip</div>
+</body>
+</html>
