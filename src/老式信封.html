@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>背景定位</title>
+    <title>老式信封</title>
     <style>
         .container {
           width: 200px;
@@ -12,10 +12,18 @@
           background: linear-gradient(white, white) padding-box,
                       repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) border-box 0 / 5em 5em;
         }
+
+        .container1 {
+            width: 200px;
+            height: 160px;
+            font-size: 16px;
+            border: 16px solid transparent;
+            border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em, #58a 0, #58a 3em, transparent 0, transparent 4em);
+        }
     </style>
 </head>
 <body>
 <div class="container">background-image方法</div>
-<div class="container">border-image方法</div>
+<div class="container1">border-image方法</div>
 </body>
 </html>
