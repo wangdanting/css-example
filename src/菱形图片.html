@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>菱形图片</title>
+	<style>
+    .container {
+      margin: 30px;
+      width: 100px;
+      height: 100px;
+      transform: rotate(45deg);
+      overflow: hidden;
+    }
+
+    .container > img {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-45deg) scale(1.42);
+    }
+
+    .container2 {
+      margin: 30px;
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+
+    .container2 > img {
+      width: 100%;
+      height: 100%;
+    }
+	</style>
+</head>
+<body>
+<div class="container">
+  <img src="../image/WechatIMG89.jpg">
+</div>
+
+<div class="container2">
+    <img src="../image/WechatIMG89.jpg">
+  </div>
+</body>
+</html>
