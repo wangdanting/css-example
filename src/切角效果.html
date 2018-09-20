@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>切角效果</title>
+	<style>
+    .container {
+      margin: 30px;
+      width: 200px;
+      height: 100px;
+    }
+
+    .container1 {
+      background: #58a;
+      background: linear-gradient(-45deg, transparent 15px, #58a 0);
+    }
+
+    .container2 {
+      background: #58a;
+      background: linear-gradient(-45deg, transparent 15px, #58a 0) right bottom,
+                  linear-gradient(45deg, transparent 15px, #58a 0) left bottom,
+                  linear-gradient(135deg, transparent 15px, #58a 0) left top,
+                  linear-gradient(-135deg, transparent 15px, #58a 0) right top;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
+	</style>
+</head>
+<body>
+  <div class="container container1">linear-gradient</div>
+  <div class="container container2">linear-gradient</div>
+</body>
+</html>
