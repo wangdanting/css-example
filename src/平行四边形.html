@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>平行四边形</title>
+	<style>
+		.btn {
+      margin: 30px;
+      width: 100px;
+      height: 50px;
+      background: #58a;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .btn1 {
+      transform: skewX(-45deg);
+    }
+
+    .btn2 {
+      transform: skewX(-45deg);
+    }
+
+    .btn2 > div {
+      transform: skewX(45deg);
+    }
+
+    .btn3 {
+      position: relative;
+      margin: 30px;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .btn3::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #58a;
+      transform: skewX(-45deg);
+      z-index: -1;
+    }
+
+	</style>
+</head>
+<body>
+  <div class="btn btn1">click me</div>
+  
+  <div class="btn btn2">
+    <div>click me</div>
+  </div>
+
+  <div class="btn3">click me</div>
+</body>
+</html>
