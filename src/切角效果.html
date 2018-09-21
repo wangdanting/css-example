@@ -23,10 +23,27 @@
       background-size: 50% 50%;
       background-repeat: no-repeat;
     }
+
+    .container3 {
+      background: #58a;
+      clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px), 0 20px);
+    }
+
+    .container4 {
+      background: #58a;
+      background: radial-gradient(circle at top left, transparent 15px, #58a 0) left top,
+                  radial-gradient(circle at top right, transparent 15px, #58a 0) right top,
+                  radial-gradient(circle at bottom right, transparent 15px, #58a 0) right bottom,
+                  radial-gradient(circle at bottom left, transparent 15px, #58a 0) left bottom;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
 	</style>
 </head>
 <body>
   <div class="container container1">linear-gradient</div>
   <div class="container container2">linear-gradient</div>
+  <div class="container container3">clip-path</div>
+  <div class="container container4">radial-gradient</div>
 </body>
 </html>
