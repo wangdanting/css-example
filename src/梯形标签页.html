@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>梯形标签页</title>
+    <style>
+        .container {
+          position: relative;
+          display: inline-block;
+          margin: 20px;
+          padding: 20px;
+        }
+
+        .container1::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #58a;
+          z-index: -1;
+          transform: perspective(22px) rotateX(5deg);
+        }
+
+        .container2::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #58a;
+          z-index: -1;
+          transform: perspective(22px) rotateX(5deg);
+          transform-origin: left;
+        }
+
+        .container3::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #58a;
+          z-index: -1;
+          transform: perspective(22px) rotateX(5deg);
+          transform-origin: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container container1">perspective</div>
+    <div class="container container2">perspective</div>
+    <div class="container container3">perspective</div>
+</body>
+</html>
