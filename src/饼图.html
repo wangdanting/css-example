@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>连续的图像边框</title>
+    <style>
+       .pie {
+         width: 100px;
+         height: 100px;
+         background: yellowgreen linear-gradient(to right, transparent 50%, #655 0);
+         border-radius: 50%;
+         overflow: hidden;
+       }
+
+      .pie::after {
+        content: '';
+        display: block;
+        margin-left: 50%;
+        width: 50%;
+        height: 100%;
+        background: yellowgreen;
+        transform-origin: left;
+        animation: spin 3s linear infinite, bg 6s step-end infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(180deg);
+        }
+      }
+
+      @keyframes bg {
+        50% {
+          background: #655;
+        }
+      }
+
+      .pie60::after {
+        animation: spin 50s linear infinite, bg 100s step-end infinite;
+        animation-play-state: paused;
+        animation-delay: -60s;
+      }
+
+    </style>
+</head>
+<body>
+  <div class="pie"></div>
+  <div class="pie pie60"></div>
+</body>
+</html>
