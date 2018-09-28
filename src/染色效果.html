@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>染色效果</title>
+    <style>
+      .container {
+        margin: 20px;
+      }
+
+      .img {
+        display: block;
+        width: 300px;
+        height: 420px;
+      }
+
+      .img1 {
+        filter: sepia(1) saturate(4) hue-rotate(295deg);
+        transition: .5s filter;
+      }
+
+      .img1:hover {
+        filter: none;
+      }
+
+      .container1 {
+        width: 300px;
+        height: 420px;
+        background: hsl(335, 100%, 50%);
+        transition: .5s background;
+      }
+
+      .img2 {
+        mix-blend-mode: luminosity;
+      }
+
+      .container1:hover {
+        background: transparent;
+      }
+
+      .container3 {
+        width: 300px;
+        height: 420px;
+        background-image: url('../image/6.jpg');
+        background-color: hsl(335, 100%, 50%);
+        background-size: cover; 
+        background-blend-mode: luminosity;
+        transition: .5s background-color;
+      }
+
+      .container3:hover {
+        background-color: transparent;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+  <img class="img" src="../image/6.jpg"/>
+</div>
+<div class="container">
+    <img class="img img1" src="../image/6.jpg"/>
+</div>
+<div class="container container1">
+    <img class="img img2" src="../image/6.jpg"/>
+</div>
+<div class="container3"></div>
+</body> 
+</html>
