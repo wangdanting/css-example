@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>不规则投影</title>
+	<style>
+    .container1 {
+      position: relative;
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      background: #ffd600;
+      border-radius: 20px;
+    }
+
+    .container1::after {
+      content: '';
+      position: absolute;
+      margin: auto;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      height: 60px;
+      transform: rotate(45deg);
+      background: inherit;
+    }
+
+    .container2 {
+      position: relative;
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      background: transparent;
+      border-radius: 20px;
+      border: 8px dashed #ffd600;
+    }
+
+    .container3 {
+      position: relative;
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(45deg, transparent 20px, #ffd600 0) left bottom, 
+                        linear-gradient(-45deg, transparent 20px, #ffd600 0) right bottom,
+                        linear-gradient(135deg, transparent 20px, #ffd600 0) left top ,
+                        linear-gradient(-135deg, transparent 20px, #ffd600 0) right top;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;  
+                 
+    }
+
+    .box-shadow {
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);     
+    }
+	</style>
+</head>
+<body>
+  <div class="container1">speech bubble</div>
+  <div class="container2">dotted border</div>
+  <div class="container3">cutout corners</div>
+  <div class="container1 box-shadow">speech bubble box-shadow</div>
+  <div class="container2 box-shadow">dotted border box-shadow</div>
+  <div class="container3 box-shadow">cutout corners box-shadow</div>
+</body>
+</html>
