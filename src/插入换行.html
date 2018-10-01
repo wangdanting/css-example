@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>插入换行</title>
+	<style>
+		dl {
+      margin: 20px;
+      border: 1px solid;
+    }
+
+    dt::after {
+      content: ':';
+    }
+
+    dt, dd {
+      display: inline;
+      margin: 0;
+    }
+
+    dd + dt::before {
+      content: '\000A';
+      white-space: pre;
+    }
+
+    dd + dd::before {
+      content: '、';
+      margin-left: -.25em;
+    }
+	</style>
+</head>
+<body>
+  <dl>
+    <dt>名字</dt>
+    <dd>王丹婷</dd>
+    <dt>爱好</dt>
+    <dd>男</dd>
+    <dd>帅的</dd>
+    <dd>高的</dd>
+    <dd>壮的</dd>
+    <dt>性别</dt>
+    <dd>女</dd>
+  </dl>
+</body>
+</html>
