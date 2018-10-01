@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文本行的斑马条纹</title>
+	<style>
+		div {
+      padding: 1em;
+      font-size: 14px;
+      white-space: pre;
+      background: beige;
+      line-height: 1.5;
+      background-image: linear-gradient(rgba(0, 0, 0, .2) 50%, transparent 0);
+      background-size: auto 3em;
+      background-origin: content-box;
+    }
+	</style>
+</head>
+<body>
+  <div>while (true) {
+      let d = new Date();
+      if (d.getDate() == 1 &&
+          d.getMonth() == 3 ) {
+            alert('trololol');
+          }
+    }</div>
+</body>
+</html>
