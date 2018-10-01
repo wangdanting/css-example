@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>连字符断行</title>
+    <style>
+        .basic {
+          margin: 20px;
+          width: 200px;
+          border: 1px solid;
+        }
+
+        span {
+          color: red;
+        }
+
+        .way1 {
+          text-align: justify;
+        }
+
+        .way2 {
+          hyphens: auto;
+        }
+
+        .way3 {
+          hyphens: manual;
+        }
+    </style>
+</head>
+<body>
+<div class="basic way1">
+    kevin is so handsome, but he delete my weChat, I very mat, this not his error. he and I dont friend, just go away.
+    <span>use textAlign: justify;</span>
+</div>
+
+<div class="basic way2">
+    kevin is so handsome, but he delete my weChat, I very mat, this not his error. he and I dont friend, just go away.
+    <span>use hyphens: auto</span>
+</div>
+
+<div class="basic way3" lang="zh">
+    CSS3引入了一个新的属性hyphens。它接受三个值：none、manual和auto。manaul是它的初始值，其行为正好对应了现有的工作方式：我们
+    可以在任何时候插入软连字符，来实现断行折行的效果。
+    <span>use hyphens: manual</span>
+</div>
+
+<div class="basic way2" lang="zh">
+    CSS3引入了一个新的属性hyphens。它接受三个值：none、manual和auto。manaul是它的初始值，其行为正好对应了现有的工作方式：我们
+    可以在任何时候插入软连字符，来实现断行折行的效果。
+    <span>use hyphens: auto</span>
+</div>
+</body>
+</html>
