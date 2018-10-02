@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义下划线</title>
+    <style>
+      .basic {
+        margin: 20px;
+        width: 200px;
+      }
+
+      span {
+        color: red;
+      }
+
+      .way1 {
+        text-decoration: underline;
+      }
+
+      .way2 {
+        display: inline;
+        border-bottom: 1px solid;
+      }
+
+      .way3 {
+        display: inline;
+        box-shadow: 0 -1px #000 inset;
+      }
+
+      .way4 {
+        display: inline;
+        background-image: linear-gradient(#000, #000);
+        background-size: 100% 1px;
+        background-position: 0 1.15em;
+        background-repeat: no-repeat;
+        text-shadow: 0.05em 0 white, -0.05em 0 white;
+      } 
+
+      .way5 {
+        display: inline;
+        background-image: linear-gradient(90deg, #000 66%, transparent 0);
+        background-size: .4em 1px;
+        background-position: 0 1.15em;
+        background-repeat: repeat-x;
+        text-shadow: 0.05em 0 white, -0.05em 0 white;
+      }
+    </style>
+</head>
+<body>
+  <p class="basic way1">The only way to get rid of a temptation is to yield to it. <span>use text-decoration:underline</span></p>
+  <p class="basic way1">含有牛油果果树果脂，取少量本品于指尖，轻轻涂抹于眼周肌肤。如不慎入眼，立即用清水冲洗。<span>use text-decoration:underline</span></p>
+
+  <div class="basic"><p class="way2">The only way to get rid of a temptation is to yield to it. <span>use border-bottom</span></p></div>
+  <div class="basic"><p class="way2">含有牛油果果树果脂，取少量本品于指尖，轻轻涂抹于眼周肌肤。如不慎入眼，立即用清水冲洗。<span>use border-bottom</span></p></div>
+
+  <div class="basic"><p class="way3">The only way to get rid of a temptation is to yield to it. <span>use box-shadow</span></p></div>
+  <div class="basic"><p class="way3">含有牛油果果树果脂，取少量本品于指尖，轻轻涂抹于眼周肌肤。如不慎入眼，立即用清水冲洗。<span>use box-shadow</span></p></div>
+
+  <div class="basic"><p class="way4">The only way to get rid of a temptation is to yield to it. <span>use linear-gradient</span></p></div>
+  <div class="basic"><p class="way4">含有牛油果果树果脂，取少量本品于指尖，轻轻涂抹于眼周肌肤。如不慎入眼，立即用清水冲洗。<span>use linear-gradient</span></p></div>
+
+  <div class="basic"><p class="way5">The only way to get rid of a temptation is to yield to it. <span>use linear-gradient</span></p></div>
+  <div class="basic"><p class="way5">含有牛油果果树果脂，取少量本品于指尖，轻轻涂抹于眼周肌肤。如不慎入眼，立即用清水冲洗。<span>use linear-gradient</span></p></div>
+</body>
+</html>
