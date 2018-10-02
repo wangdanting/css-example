@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>华丽的&符号</title>
+	<style>
+    @font-face {
+        font-family: Ampersand;
+        src: local('Baskerville'), 
+             local('Goudy Old Style'), 
+             local('Garamond'), 
+             local('Palatino'), 
+             local('serif');
+        unicode-range: U+26;  /* '&'.charCodeAt(0).toString(16) */        
+      }
+
+    @font-face {
+        font-family: Ampersand-Italic;
+        src: local('Baskerville-Italic'), 
+             local('Goudy Old Style-Italic'), 
+             local('Garamond-Italic'), 
+             local('Palatino-Italic'), 
+             local('serif-Italic');
+        unicode-range: U+26;  /* '&'.charCodeAt(0).toString(16) */        
+      }
+
+    .basic {
+      font-size: 16px;
+      color: #000;
+      font-weight: 900;
+    }
+
+    .amp {
+      font-family: Baskerville, 'Goudy Old Style', Garamond, Palatino, serif;
+      font-style: italic;
+    }
+
+    .way1 {
+      font-family: Ampersand;
+    }
+
+    .way2 {
+      font-family: Ampersand-Italic;
+    }
+	</style>
+</head>
+<body>
+  <p class="basic">HTML&CSS</p>
+  <p class="basic">HTML<span class="amp">&</span>CSS</p>
+  <p class="basic way1">HTML&CSS</p>
+  <p class="basic way2">HTML&CSS</p>
+</body>
+</html>
