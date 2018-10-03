@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文字效果-文字外发光效果</title>
+	<style>
+		.basic {
+      display: inline-block;
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
+      background: #222;
+      font-size: 65px;
+      font-weight: 900;
+      text-align: center;
+      color: #ffc;
+    }
+
+    .way3 {
+      text-shadow: 0 0 .1em hsla(0, 0%, 100%, .8), 0 0 .3em hsla(0, 0%, 100%, .8);
+    }
+
+    .way1 {
+      transition: 1s;
+    }
+
+    .way1:hover {
+      text-shadow: 0 0 .1em hsla(0, 0%, 100%, .8), 0 0 .3em hsla(0, 0%, 100%, .8);
+      color: transparent;
+    }
+	</style>
+</head>
+<body>
+  <p class="basic way3">Glow</p>
+  <p class="basic way1">Hover</p>
+</body>
+</html>
