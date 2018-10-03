@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>扩大可点击区域</title>
+	<style>
+    .basic {
+      position: relative;
+      margin: 20px;
+      width: 50px;
+      height: 50px;
+      background: #58a;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 1s;
+    }
+
+    .basic::before {
+      content: '';
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 2px;
+      height: 20px;
+      background: white;
+    }
+
+    .basic::after {
+      content: '';
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 20px;
+      height: 2px;
+      background: white;
+    }
+
+    .basic:hover {
+      background-color: #7099b5;
+    }
+
+    .way1 {
+      border: 10px solid transparent;
+      background-clip: padding-box;
+    }
+
+    .way2 {
+      border: 10px solid transparent;
+      background-clip: padding-box;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .3) inset;
+    }
+
+    .way3 {
+      position: relative;
+      margin: 20px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      background: #58a;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 1s;
+      text-align: center;
+      color: white;
+    }
+
+    .way3::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      bottom: -10px;
+      right: -10px;
+    }
+
+    .way3:hover {
+      background-color: #7099b5;
+    }
+
+
+	</style>
+</head>
+<body>
+  <div class="basic"></div>
+  <div class="basic way1"></div>
+  <div class="basic way2"></div>
+  <div class="way3">+</div>
+</body>
+</html>
