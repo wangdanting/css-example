@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文字效果-空心字效果</title>
+	<style>
+		.basic {
+      display: inline-block;
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
+      font-size: 65px;
+      font-weight: 900;
+      background: deeppink;
+      color: white;
+      text-align: center;
+    }
+
+    .way1 {
+      text-shadow: 1px 1px black, 
+                   -1px -1px black, 
+                   1px -1px black, 
+                   -1px 1px black;
+    }
+
+    .way2 {
+      text-shadow: 2px 2px black, 
+                  -2px -2px black, 
+                  2px -2px black, 
+                  -2px 2px black;
+    }
+
+    .way3 {
+      text-shadow: 0 0 2px black,
+                   0 0 2px black,
+                   0 0 2px black,
+                   0 0 2px black,
+                   0 0 2px black,
+                   0 0 2px black;
+    }
+	</style>
+</head>
+<body>
+  <p class="basic">CSS</p>
+  <p class="basic way1">CSS</p>
+  <p class="basic way2">CSS</p>
+  <p class="basic way3">CSS</p>
+</body>
+</html>
