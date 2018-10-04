@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modal背后的蒙层</title>
+    <style>
+        .container {
+          position: relative;
+          display: inline-block;
+          margin: 20px;
+          width: 400px;
+          height: 300px;
+          background: url('../image/web-bg.png') center center / cover no-repeat;
+          overflow: hidden;
+        }
+
+        .modal {
+          position: absolute;
+          margin: auto;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100px;
+          height: 60px;
+          background: white;
+          font-size: 10px;
+          z-index: 2;
+        }
+
+        .overlay {
+          position: absolute; /* 全局用fixed */
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, .5);
+          z-index: 1;
+        }
+
+        .way2::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, .5);
+          z-index: 1;
+        }
+
+        .way3 {
+          box-shadow: 0 0 0 999px rgba(0, 0, 0, .5); /* 全局用vmax */
+        }
+
+        .way4::backdrop {
+          background: rgba(0, 0, 0, .5);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+  <div class="overlay"></div>
+  <div class="modal">添加一个额外的html作为遮盖背景</div>
+</div>
+
+<div class="container way2">
+    <div class="modal">将modal伪元素遮盖背景</div>
+</div>
+
+<div class="container">
+    <div class="modal way3">用box-shadow方案</div>
+</div>
+
+<div class="container way4">
+    <div class="modal">用::backdrop方法，兼容性差，未实现</div>
+</div>
+</body>
+</html>
