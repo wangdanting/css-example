@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>滚动提示</title>
+	<style>
+    ul {
+      margin: 20px;
+      width: 300px;
+      height: 400px;
+      font-size: 40px;
+      overflow-y: scroll;
+      border: 1px solid gray;
+      list-style: none;
+    }
+
+    .container {
+      background: linear-gradient(white, hsla(0, 0%, 100%, 0)),
+                  radial-gradient(at top, rgba(0, 0, 0, .2), transparent 70%),
+                  linear-gradient(to top, white, hsla(0, 0%, 100%, 0)),
+                  radial-gradient(at bottom, rgba(0, 0, 0, .2), transparent 70%);
+    background-position: 0 0, 0 0, left bottom, left bottom;           
+    background-size: 100% 50px, 100% 15px, 100% 50px, 100% 15px;
+    background-repeat: no-repeat;
+    background-attachment: local, scroll, local, scroll;
+    }
+	</style>
+</head>
+<body>
+  <ul class="container">
+    <li>wangdanting</li>
+    <li>Josn</li>
+    <li>Css</li>
+    <li>Js</li>
+    <li>JavaScript</li>
+    <li>phython</li>
+    <li>Java</li>
+    <li>Html</li>
+    <li>.Net</li>
+    <li>C#</li>
+    <li>C++</li>
+    <li>Wechat</li>
+  </ul>
+</body>
+</html>
