@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交互式的图片对比控件</title>
+    <style>
+        .image-slider {
+          position: relative;
+          display: inline-block;
+          margin: 20px;
+          height: 422px;
+        }
+
+        .image-slider > div {
+          position: absolute;
+          top: 0; 
+          left: 0;
+          bottom: 0;
+          width: 50%;
+          overflow: hidden;
+          resize: horizontal;
+          cursor: ew-resize;
+        }
+
+        .image-slider > div::before {
+          content: '';
+          position: absolute;
+          bottom: 2px;
+          right: 2px;
+          width: 12px;
+          height: 12px;
+          background: linear-gradient(-45deg, white 50%, transparent 0);
+        }
+
+        .image-slider img {
+          display: inline-block;
+          width: 300px;
+          user-select: none;
+        }
+    </style>
+    <style>
+      .image-container {
+          position: relative;
+          display: inline-block;
+          margin: 20px;
+          height: 422px;
+      }
+
+      .image-container > div {
+          position: absolute;
+          top: 0; 
+          left: 0;
+          bottom: 0;
+          width: 50%;
+          overflow: hidden;
+        }
+
+        .image-container img {
+          display: inline-block;
+          width: 300px;
+        }
+
+        .image-container input {
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          width: 100%;
+        }
+    </style>
+</head>
+<body>
+  <div class="image-slider">
+    <div>
+      <img src="../image/2.png" alt="Before">
+    </div>
+    <img src="../image/2.jpg" alt="After">
+  </div>
+
+  <div class="image-container">
+      <div class="first-img">
+          <img src="../image/2.png" alt="Before">
+      </div>
+      <img src="../image/2.jpg" alt="After">
+  </div>
+
+  <script>
+    let container = document.getElementsByClassName('image-container')[0];
+    let firstImg = document.getElementsByClassName('first-img')[0];
+    let range = document.createElement('input');
+    range.type = 'range';
+    range.oninput = () => {
+      firstImg.style.width = range.value + '%';
+    }
+    container.appendChild(range);
+  </script>
+</body>
+</html>
