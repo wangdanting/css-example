@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过模糊来弱化背景</title>
+    <style>
+
+      .container {
+        position: relative;
+        margin: 20px;
+        width: 400px;
+        height: 200px;
+      }
+
+        main {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('../image/web-bg.png') center top / cover no-repeat;
+        }
+
+        dialog {
+          position: absolute;
+          display: inline-block;
+          margin: auto;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100px;
+          height: 60px;
+          background: white;
+          font-size: 10px;
+          z-index: 2;
+        }
+
+        .main {
+          filter: blur(3px) contrast(.8) brightness(.8);
+        }
+
+    </style>
+</head>
+<body>
+  <div class="container">
+      <main class="main"></main>
+      <dialog>使用filter来模糊背景</dialog>
+  </div>
+  
+</body>
+</html>
