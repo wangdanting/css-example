@@ -78,6 +78,44 @@
       .way11 li:first-child:nth-last-child(4) ~ li::before {
         background: rgba(255, 0, 0, .5);
       }
+
+      .way12 li:nth-child( n + 4 )::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way13 li:nth-last-child(n+4)::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way14 li:first-child:nth-last-child(n+4)::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way15 li:first-child:nth-last-child(n+4) ~ li::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way16 li:first-child:nth-last-child(n+4)::before, 
+      .way16 li:first-child:nth-last-child(n+4) ~ li::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way17 li:nth-last-child(-n + 4)::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way18 li:first-child:nth-last-child(-n + 4)::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way19 li:first-child:nth-last-child(-n + 4) ~ li::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way20 li:first-child:nth-last-child(n + 2):nth-last-child(-n+6):before,
+      .way20 li:first-child:nth-last-child(n + 2):nth-last-child(-n+6) ~ li:before {
+        background: rgba(255, 0, 0, .5);
+      }
     </style>
 </head>
 <body>
@@ -164,5 +202,147 @@
           <li></li>
           <li></li>
         </ul>
+
+        <h2>li:nth-child( n + 4 )</h2>
+      <ul class="way12">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:nth-last-child(n+4)</h2>
+      <ul class="way13">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(n+4)</h2>
+      <ul class="way14">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(n+4)</h2>
+      <ul class="way14">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(n+4)</h2>
+      <ul class="way14">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(n+4) ~ li</h2>
+      <ul class="way15">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(n+4), li:first-child:nth-last-child(n+4) ~ li</h2>
+      <ul class="way16">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:nth-last-child(-n + 4)</h2>
+      <ul class="way17">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:nth-last-child(-n + 4)</h2>
+      <ul class="way17">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(-n + 4)</h2>
+      <ul class="way18">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(-n + 4)</h2>
+      <ul class="way18">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(-n + 4)</h2>
+      <ul class="way18">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(-n + 4) ~ li</h2>
+      <ul class="way19">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>列表包含2～6项时，匹配</h2>
+        <h2>li:first-child:nth-last-child(n + 2):nth-last-child(-n+6), li:first-child:nth-last-child(n + 2):nth-last-child(-n+6) ~ li</h2>
+        <ul class="way20">
+            <li></li>
+            <li></li>
+          </ul>
+        <ul class="way20">
+            <li></li>
+        </ul>
+        <ul class="way20">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <ul class="way20">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
 </body>
 </html>
