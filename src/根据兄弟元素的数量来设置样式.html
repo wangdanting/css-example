@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>根据兄弟元素的数量来设置样式</title>
+    <style>
+      h2 {
+        margin: 0 20px;
+      }
+
+      ul {
+        margin: 0 20px 20px;
+        padding: 0;
+        counter-reset: section;
+        list-style: none;
+      }
+
+      li {
+        display: inline-block;
+      }
+
+      li:before {
+        display: inline-block;
+        counter-increment: section;
+        content: counter(section);
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        background: rgba(160, 75, 75, .1);
+        border-radius: 5px;
+      }
+
+      .way1 li:nth-child(4):before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way2 li:nth-child(4) ~ li:before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way3 li:nth-child(4):before,
+      .way3 li:nth-child(4) ~ li:before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way4 li:only-child:before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way5 li:first-child:last-child:before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way6 li:last-child::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way7 li:nth-last-child(1)::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way8 li:nth-last-child(4)::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way9 li:first-child:nth-last-child(4)::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way10 li:first-child:nth-last-child(4) ~ li::before {
+        background: rgba(255, 0, 0, .5);
+      }
+
+      .way11 li:first-child:nth-last-child(4)::before,
+      .way11 li:first-child:nth-last-child(4) ~ li::before {
+        background: rgba(255, 0, 0, .5);
+      }
+    </style>
+</head>
+<body>
+<h2>li:nth-child(4)</h2>
+<ul class="way1">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<h2>li:nth-child(4) ~ li</h2>
+<ul class="way2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<h2>li:nth-child(4), li:nth-child(4) ~ li</h2>
+<ul class="way3">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <h2>li:only-child</h2>
+<ul class="way4">
+    <li></li>
+  </ul>
+
+  <h2>li:first-child:last-child</h2>
+  <ul class="way5">
+      <li></li>
+    </ul>
+
+    <h2>li:last-child</h2>
+  <ul class="way6">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <h2>li:nth-last-child(1)</h2>
+    <ul class="way7">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+      <h2>li:nth-last-child(4)</h2>
+    <ul class="way8">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+      <h2>li:first-child:nth-last-child(4)</h2>
+      <ul class="way9">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(4) ~ li</h2>
+      <ul class="way10">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h2>li:first-child:nth-last-child(4), li:first-child:nth-last-child(4) ~ li</h2>
+      <ul class="way11">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+</body>
+</html>
