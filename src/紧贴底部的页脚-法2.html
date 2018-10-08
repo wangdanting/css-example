@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>紧贴底部的页脚-法2</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh;
+        }
+
+        header {
+            height: 100px;
+            background: #333;
+            color: white;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            height: 200px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <main>main</main>
+    <footer>footer</footer>
+</body>
+</html>
