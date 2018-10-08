@@ -5,6 +5,7 @@
     <title>垂直居中方法</title>
     <style>
         .parent {
+            margin: 20px;
             width: 300px;
             height: 200px;
             line-height: 200px;
@@ -12,13 +13,46 @@
             word-wrap: break-word;
             word-break: break-all;
         }
-
         .child {
             background: red;
             display: inline-block;
             vertical-align: middle;
             line-height: 1;
         }
+
+        .parent1 {
+            position: relative;
+            margin: 20px;
+            width: 300px;
+            height: 200px;
+            background: #f0f3f9;
+        }
+        .child1 {
+            position: absolute;
+            top: calc(50% - 75px);
+            left: calc(50% - 125px);
+            width: 250px;
+            height: 150px;
+            background: red;
+        }
+
+        .parent2 {
+            position: relative;
+            margin: 20px;
+            width: 300px;
+            height: 200px;
+            background: #f0f3f9;
+        }
+        .child2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: red;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -30,5 +64,20 @@
         sdfsdfsdffdfsddfffsdfsdfsfsfsdfsdfsdffdfsddfffsdfsdfsfsfsdfsd
     </div>
 </div>
+
+<strong>子元素高未知</strong>
+<div class="parent2">
+    <div class="child2">
+        <h1>ddd</h1>
+        <p>ddfsfdsfsdff</p>
+    </div>
+</div>
+
+<strong>子元素高已知</strong>
+<div class="parent1">
+    <div class="child1">
+    </div>
+</div>
+
 </body>
 </html>
