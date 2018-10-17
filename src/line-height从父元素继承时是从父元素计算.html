@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>line-height值从父元素继承时是从父元素计算而不是子元素上计算</title>
+    <style type="text/css">
+        div {
+          margin: 20px;
+          font-size: 14px;
+          width: 200px;
+          border: 1px solid;
+        }
+
+        p {
+          font-size: 16px;
+        }
+        
+        .container1 {
+          line-height: 140%;
+        }
+
+        .container2 {
+          line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="container1">
+  <p>line-height值从父元素继承时是从父元素计算而不是子元素上计算。</p>
+</div>
+<div class="container2">
+    <p>解决方法，为元素设置一个缩放因子，指定一个数时，缩放因子将时继承值而不是计算值，这个数会应用到该元素及其所有子元素，所以各元素都根据其自己的font-size计算line-height</p>
+  </div>
+</body>
+</html>
