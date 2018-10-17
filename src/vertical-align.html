@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vertical-align的特性</title>
+    <style>
+      .container {
+        width: 300px;
+        line-height: 100px;
+        border: 1px solid;
+      }
+      .container1 {
+        vertical-align: middle; 
+      }
+
+      span {
+        vertical-align: middle; 
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+      <div class="container1">vertical-align只应用与‘行内元素’和‘表单元格’</div>
+  </div>
+  <div class="container">
+      <span>vertical-align只应用与‘行内元素’和‘表单元格’</span>
+  </div>
+</body>
+</html>
